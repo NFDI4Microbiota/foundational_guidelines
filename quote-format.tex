@@ -1,0 +1,6 @@
+\usepackage{framed}
+\usepackage{xcolor}
+\let\oldquote=\quote
+\let\endoldquote=\endquote
+\colorlet{shadecolor}{gray!5}
+\renewenvironment{quote}{\begin{shaded*}\begin{em}}{\end{em}\end{shaded*}}

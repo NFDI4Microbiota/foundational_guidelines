@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>NFDI4Microbiota Foundation Guidelines</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">NFDI4Microbiota Foundation Guidelines</h1>
+</header>
+<p>NFDI4Microbiota acts as a central infrastructure hub for the national
+microbiology community by providing services for research data
+management, processing and publishing for scientists in the field. It
+relies in turn on already established infrastructure and services
+provided especially by de.NBI and NFDI4Microbiota associated partners
+for hosting and expertise in data processing, quality assessment and
+analysis.</p>
+<p>These Guidelines shall act as basis for specific policies of all
+NFDI4Mircobiota projects and services. NFDI partners and other consortia
+are encouraged to use and adapt these guidelines according to their
+specific needs under the CC-BY license for their own purpose.
+NFDI4Microbiota associated partners aim to offer data handling and
+storage, bioinformatic tools and services as well as training within the
+scope of a centralized infrastructure to a broad scientific audience. In
+order to provide a consistent experience, permanent availability and
+long-term support following the <a
+href="https://www.go-fair.org/fair-principles/">FAIR principles</a> and
+the Open science concepts, offered services and members of
+NFDI4Microbiota are supposed to adhere to the following guidelines,
+which are monitored regularly by TA leads and in Use Case reviews
+internally.</p>
+<blockquote>
+<p>The following items are meant to be short and concise descriptions of
+community goals within NFDI4Microbiota that are communicated to partners
+and users (on the website). Expanded explanations in italics are meant
+as clarifications to NFDI4Microbiota members in help of fulfilling
+milestones and implementing services (not necessarily shown to end users
+or collapsed by default, to keep the guideline as brief as possible).
+Further details can additionally be found e.g. in the <a
+href="https://nfdi4microbiota.github.io/nfdi4microbiota-knowledge-base/">NFDI4Microbiota
+Knowledge Base</a>.</p>
+</blockquote>
+<h1 data-number="1" id="availability"><span
+class="header-section-number">1</span> Availability</h1>
+<h2 data-number="1.1" id="providing-software-and-documentation"><span
+class="header-section-number">1.1</span> Providing software and
+documentation</h2>
+<p>Applications offered in the context of the NFDI4Microbiota are
+provided free of charge for download in case of offline tools. Online
+tools are provided for any researcher with reasonable quota of usage
+also free of charge. Links to the applications with a short description
+and accompanying documentation are available on <a
+href="www.nfdi4microbiota.de">www.nfdi4microbiota.de</a>.</p>
+<blockquote>
+<p>We aim to use and encourage the usage of free of charge tools to
+enable access for the broadest possible audience and anyone with a
+scientific interest. Pay-walls and license fees or unnecessary
+registrations may hinder the adoption and hence the re-usability
+considerably. Similarly, registration with a dedicated account may deter
+potential users. Instead services are encouraged to use existing
+Authentication and Authorization Infrastructure (AAI) such as <a
+href="https://lifescience-ri.eu/ls-login.html">LifeScience-RI</a>.
+Software that is designed to work on a local machine should be designed
+to work also without a network connection, where feasible and
+online-only tools should offer reasonable computation and storage quota
+for users to conduct meaningful analysis (not just example data).</p>
+</blockquote>
+<h2 data-number="1.2" id="open-source"><span
+class="header-section-number">1.2</span> Open source</h2>
+<p>Software in this context is developed under an <a
+href="https://opensource.org/licenses/">OSI-approved license</a> and the
+source code is published in openly accessible code repositories, along
+with appropriate documentation under an open license.</p>
+<blockquote>
+<p>From experience, tools developed in academia sometimes lack in the
+necessary documentation, are no longer maintained shortly after
+publication or not available at all after personnel left or institute’s
+website links changed. In these cases, potentially useful tools become
+useless at best or even a frustrating waste of time for following
+generations of researchers. Openly hosted source code under a permissive
+license enables others to troubleshoot, adapt or even take over the
+development of a tool even in these cases. We recommend including the
+relatively concise <a href="https://opensource.org/license/mit/">MIT
+license</a>. Publishing the actual source of a tool on a public code
+repository is necessary to prevent black-box results and preserve
+resources persistently. We recommend code hosting on <a
+href="github.com">github.com</a>, <a href="gitlab.org">gitlab.org</a>,
+[gitlab.eudat.eu], [codeberg.org] or similar services for software
+projects. NFDI4Microbiota specific projects are hosted under the <a
+href="github.com/NFDI4Microbiota">github.com/NFDI4Microbiota team
+account</a>. Author should ideally also make use of the code deposition
+feature of <a href="zenodo.org">Zenodo</a> and make sure that the git
+repository is archived by <a href="softwareheritage.org">Software
+Heritage</a>. We also encourage to apply good research software
+development practices (including automated testing, semantic versioning,
+machine-readable software management plans, allocation of DOI to
+version, usage of Citation File Format (CFF) etc.).</p>
+</blockquote>
+<h2 data-number="1.3" id="hosting"><span
+class="header-section-number">1.3</span> Hosting</h2>
+<p>Online provided services are supposed to be accessible with minimal
+downtime. To assure the permanent availability, hosting containerized
+services in the de.NBI cloud infrastructure and re-using established
+high-availability services within the scientific community is
+encouraged.</p>
+<blockquote>
+<p>Even though we recognize that hosting web-tools on cloud services
+requires additional effort, we highly encourage this step instead of or
+additionally to hosting on local institute’s machines to guarantee
+scalability for high demand of compute and storage resources and provide
+high availability. If done correctly, containerizing applications can
+prevent a lot of future work and headaches. Further <a
+href="https://www.denbi.de/images/Service/deNBI_ELIXIR-DE_Gudielines_Services_version_20200729.pdf">de.NBI
+specific guidelines</a> for hosted services apply.</p>
+</blockquote>
+<h2 data-number="1.4" id="open-access-publishing"><span
+class="header-section-number">1.4</span> Open access publishing</h2>
+<p>All types of scientific publications created in the context of
+NFDI4Microbiota are meant to be published in Open Access journals. In
+addition, we urge our users to use preprint servers like <a
+href="https://www.biorxiv.org/">bioRxiv</a> to make their findings
+openly accessible prior to publication. Researchers using the services
+of NFDI4Microbiota are highly encouraged to publish in Open Access
+journals as well.</p>
+<blockquote>
+<p>Research findings funded by public money should be made freely
+available in Open Access journals to maximize the potential audience and
+promote Open Science goals. Especially DFG funded projects have the
+obligation to publish their result under open licenses in Open Access
+and must contain a reference to the respective project number. In the
+case of publications enabled by NFDI4Microbiota this is “Deutsche
+Forschungsgemeinschaft (DFG) - Project number 460129525”.</p>
+</blockquote>
+<h2 data-number="1.5" id="open-data"><span
+class="header-section-number">1.5</span> Open data</h2>
+<p>Data handled/produced in the context of NFDI4Microbiota must be made
+FAIR and openly available at the earliest possible time under a
+permissive license unless legal etc. restrictions prohibit a publication
+in commonly used repositories. This includes the raw data of the
+experiments and also the accompanying metadata in a commonly used
+metadata standard.</p>
+<blockquote>
+<p>Services that receive data should encourage the user to publish their
+data openly right away (e.g. by default) either within the service or
+recommended repositories. Where data is not made publicly available,
+data sharing with other users should be enabled with fine grained
+control over read/write and re-sharing permissions. Finally, all data
+and its accompanying metadata (following the <a
+href="https://github.com/NFDI4Microbiota/MetadataStandards">minimal
+standards</a>) needs to be deposited in the respective repositories
+latest upon publication of the research. An appropriate and compatible
+license (<a href="https://creativecommons.org/choose/#">Creative
+Commons</a> <a
+href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> or <a
+href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> is
+recommended) needs to be supported by the service and chosen by the
+user. The data set should be properly referenced in the publications
+using the respective identifiers.</p>
+</blockquote>
+<h1 data-number="2" id="support"><span
+class="header-section-number">2</span> Support</h1>
+<h2 data-number="2.1" id="support-contact"><span
+class="header-section-number">2.1</span> Support contact</h2>
+<p>Each service requires a contact (e-mail address) deposited with
+NFDI4Microbiota for support questions via the <a
+href="https://nfdi4microbiota.de/contact-form/">help desk</a>
+(e.g. e-mail support, online issue tracking).</p>
+<blockquote>
+<p>Primarily, developers of a service are responsible for the
+maintenance, availability, documentation and supporting users with
+problems and handling feature requests. Since we aim to interlock the
+different services offered within NFDI4Mictobiota (e.g. in common
+workflows), we want to also offer central support to users who use
+NFDI4Microbiota as a platform. In order to address requests directly
+from the help desk or delegate issues to the respective maintainers, a
+contact address and link to the documentation is needed for each
+service.</p>
+</blockquote>
+<h2 data-number="2.2" id="documentation-in-the-knowledge-base"><span
+class="header-section-number">2.2</span> Documentation in the Knowledge
+Base</h2>
+<p>Services maintain a short description with documentation on a
+sub-page in the NFDI4Microbiota Knowledge Base published under a
+permissive license.</p>
+<blockquote>
+<p>As part of the effort to make a service available via the
+NFDI4Microbiota platform for better visibility, a short description
+(optimally with a screen shot) along with links to the service itself,
+documentation and code repository. This sub-page will also be used to
+summarize frequently asked support questions and answers by the
+maintainers and the help desk.</p>
+</blockquote>
+<h1 data-number="3" id="interoperability"><span
+class="header-section-number">3</span> Interoperability</h1>
+<h2 data-number="3.1" id="compatible-community-standards"><span
+class="header-section-number">3.1</span> Compatible community
+standards</h2>
+<p>Software and services support widely used bioinformatics standard
+formats for input and output in order to make them compatible with other
+tools. Metadata formats adhere to widely used minimal standards and are
+required for any user uploaded data. Services and tools provided by
+NFDI4Microbiota which deal with metadata and relevant file formats
+support at least one of these standards as a default or recommendation
+for users.</p>
+<blockquote>
+<p>While a myriad of file formats is generally available and it is easy
+to generate purpose-build output for your own applications, many are
+hard to comprehend and parse, not or barely specified and generally a
+hindrance to re-usability and interoperability. Additionally, neither
+metadata, nor provenance information is stored along the primary data
+more often than not. Therefore, services are supposed to adhere to
+widely-used and specified file formats for input and output. Summary
+statistics and logs with complete parameters are highly encouraged to
+enable provenance tracking. Web services which let users upload data
+should request metadata in a format compatible with at least one
+well-specified metadata standard by default.</p>
+</blockquote>
+<h2 data-number="3.2" id="persistent-identifiers"><span
+class="header-section-number">3.2</span> Persistent Identifiers</h2>
+<p>Whenever possible, persistent identifiers are used within the
+services own databases and when referring/linking to external sources
+also in output of offline tools. The interoperability between offered
+services that are relevant for each other is highly encouraged whenever
+possible.</p>
+<blockquote>
+<p>Databases have to make use of existing (persistent) identifiers when
+importing external resources (e.g. other databases). External
+identifiers should link back to the respective resource via permalinks
+or API. Additionally, databases may provide their own persistent
+identifiers, especially when cataloging novel entries. These identifiers
+should be exposed as permalinks or in an API.</p>
+</blockquote>
+<h1 data-number="4" id="re-usability"><span
+class="header-section-number">4</span> (Re-)Usability</h1>
+<h2 data-number="4.1" id="terms-of-use"><span
+class="header-section-number">4.1</span> Terms of use</h2>
+<p>Services publicly state the terms of their use.</p>
+<blockquote>
+<p>Web services present their terms of use for visitors as part of their
+website to inform users about the conditions and restrictions of the
+service, specifying the following information: Who is offering the
+service under which license or jurisdiction and with which (limited)
+guarantees to which audience (in case of restricted access).
+Additionally, services that handle user data (login information or
+uploaded material) need to display a privacy policy (ger.:
+Datenschutzerklärung) at registration/upload specifying which data is
+stored where, the responsible data privacy office and terms for data
+retention, sharing and deletion in compliance with the law. Services may
+make use of generic Terms of Service and Privacy Policy offered by
+NFDI4Microbiota internally and customize them to their needs under legal
+advisement.</p>
+</blockquote>
+<h2 data-number="4.2" id="accessibility"><span
+class="header-section-number">4.2</span> Accessibility</h2>
+<p>Services strive to be accessible by providing APIs (application
+programming interface) or supporting machine-readable formats and
+support barrier-free accessibility.</p>
+<blockquote>
+<p>In order to maximize the usability of a given service, developers
+must think of different ways, user may interact with their interface,
+sometimes differently than intended. Instead of using a service just as
+a front-end to a database, developers should consider exposing an API or
+exporting machine-readable data dumps or releases that other developers
+can interact or make use of. Additionally, user interfaces should be
+designed with specific user constrains in mind, by offering alt-text for
+images (to be compatible with screen readers) and avoiding color-only
+encoding of information to accommodate red-green deficiency or
+color-blindness. Making a user interface rather static than dynamic
+(avoid hover-over menus) and navigable by using a logical tab order
+improves the usability of all potential users.</p>
+</blockquote>
+<h1 data-number="5" id="appendix"><span
+class="header-section-number">5</span> Appendix</h1>
+<p>Links to other consortia’s policies and guidelines:</p>
+<ul>
+<li><strong>dataPLANT:</strong>
+https://nfdi4plants.org/content/news/2021-11-08-dataplant-tools-and-services-development-principles.html</li>
+<li><strong>nfdi4health:</strong>
+https://repository.publisso.de/resource/frl:6431645/data</li>
+<li><strong>NFDI4BIOIMAGE:</strong>
+https://nfdi4bioimage.de/en/aims/</li>
+<li><strong>NMDC:</strong>
+https://microbiomedata.org/data-management/</li>
+<li><strong>GHGA:</strong> https://zenodo.org/record/6828131</li>
+</ul>
+</body>
+</html>
