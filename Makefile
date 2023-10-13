@@ -12,11 +12,11 @@ SOURCE_DOCS := $(filter-out README.md, $(wildcard *.md))
 
 EXPORTED_DOCS=\
  $(SOURCE_DOCS:.md=.html) \
- $(SOURCE_DOCS:.md=.pdf) \
- $(SOURCE_DOCS:.md=.docx) \
- $(SOURCE_DOCS:.md=.rtf) \
- $(SOURCE_DOCS:.md=.odt) \
- $(SOURCE_DOCS:.md=.epub)
+ $(SOURCE_DOCS:.md=.pdf)
+#  $(SOURCE_DOCS:.md=.docx) \
+#  $(SOURCE_DOCS:.md=.rtf) \
+#  $(SOURCE_DOCS:.md=.odt) \
+#  $(SOURCE_DOCS:.md=.epub)
 
 PANDOC=pandoc
 
