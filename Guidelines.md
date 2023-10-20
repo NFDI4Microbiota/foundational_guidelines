@@ -68,6 +68,7 @@ Data handled/produced in the context of NFDI4Microbiota must be made FAIR and op
 This includes the raw data of the experiments and also the accompanying metadata in a commonly used metadata standard.
 
 > Services that receive data should encourage the user to publish their data openly right away (e.g. by default) either within the service or recommended repositories.
+> As a guide to sharing microbiome related data and analysis results please refer to [Huttenhower et al. 2023](https://doi.org/10.1038/s41564-023-01484-x).
 > Where data is not made publicly available, data sharing with other users should be enabled with fine grained control over read/write and re-sharing permissions.
 > Finally, all data and its accompanying metadata (following the [minimal standards](https://github.com/NFDI4Microbiota/MetadataStandards)) needs to be deposited in the respective repositories latest upon publication of the research.
 > An appropriate  and compatible license ([Creative Commons](https://creativecommons.org/choose/#) [CC0](https://creativecommons.org/publicdomain/zero/1.0/) or [CC-BY](https://creativecommons.org/licenses/by/4.0/) is recommended) needs to be supported by the service and chosen by the user.
