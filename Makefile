@@ -23,7 +23,7 @@ PANDOC=pandoc
 PANDOC_OPTIONS=--standalone
 
 PANDOC_HTML_OPTIONS=--to html5 --number-sections
-PANDOC_PDF_OPTIONS=-H quote-format.tex
+PANDOC_PDF_OPTIONS=-H quote-format.tex --template eisvogel.tex
 PANDOC_DOCX_OPTIONS=
 PANDOC_RTF_OPTIONS=
 PANDOC_ODT_OPTIONS=

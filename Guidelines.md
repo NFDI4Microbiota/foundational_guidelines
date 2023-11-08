@@ -1,12 +1,24 @@
 ---
-title: NFDI4Microbiota Foundation Guidelines
+title: "NFDI4Microbiota\nFoundation Guidelines"
 numbersections: true
 numbered-sections: true
-date: 
-
+date: version 0.2
+lang: en
+keywords: [NFDI, guidelines, policy, open science, open data, FAIR, Germany, open access]
+<!-- book: true -->
+classoption: [oneside]
+toc: true
+toc-own-page: true
+titlepage: true
+titlepage-color: "FFFFFF"
+titlepage-text-color: "444444"
+titlepage-rule-color: "FFB12D"
+titlepage-rule-height: 2
+titlepage-logo: "nfdi4microbiota_Logo_new.png"
+logo-width: 50mm
 ---
 
-
+# Motivation {-}
 NFDI4Microbiota acts as a central infrastructure hub for the national microbiology community by providing services for research data management, processing and publishing for scientists in the field.
 It relies in turn on already established infrastructure and services provided especially by de.NBI and NFDI4Microbiota associated partners for hosting and expertise in data processing, quality assessment and analysis.
 
