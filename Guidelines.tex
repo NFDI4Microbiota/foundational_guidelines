@@ -1,0 +1,650 @@
+%%
+% Copyright (c) 2017 - 2023, Pascal Wagler;
+% Copyright (c) 2014 - 2023, John MacFarlane
+%
+% All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+%
+% - Redistributions of source code must retain the above copyright
+% notice, this list of conditions and the following disclaimer.
+%
+% - Redistributions in binary form must reproduce the above copyright
+% notice, this list of conditions and the following disclaimer in the
+% documentation and/or other materials provided with the distribution.
+%
+% - Neither the name of John MacFarlane nor the names of other
+% contributors may be used to endorse or promote products derived
+% from this software without specific prior written permission.
+%
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+% "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+% LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+% FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+% COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+% INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+% BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+% LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+% CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+% LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+% ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+% POSSIBILITY OF SUCH DAMAGE.
+%%
+
+%%
+% This is the Eisvogel pandoc LaTeX template.
+%
+% For usage information and examples visit the official GitHub page:
+% https://github.com/Wandmalfarbe/pandoc-latex-template
+%%
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+%
+\documentclass[
+  paper=a4,
+  ,captions=tableheading
+]{scrartcl}
+\usepackage{amsmath,amssymb}
+% Use setspace anyway because we change the default line spacing.
+% The spacing is changed early to affect the titlepage and the TOC.
+\usepackage{setspace}
+\setstretch{1.2}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\definecolor{default-linkcolor}{HTML}{A50000}
+\definecolor{default-filecolor}{HTML}{A50000}
+\definecolor{default-citecolor}{HTML}{4077C0}
+\definecolor{default-urlcolor}{HTML}{4077C0}
+\usepackage[margin=2.5cm,includehead=true,includefoot=true,centering,]{geometry}
+% add backlinks to footnote references, cf. https://tex.stackexchange.com/questions/302266/make-footnote-clickable-both-ways
+\usepackage{footnotebackref}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{framed}
+\usepackage{xcolor}
+\let\oldquote=\quote
+\let\endoldquote=\endquote
+\colorlet{shadecolor}{gray!5}
+\renewenvironment{quote}{\begin{shaded*}\begin{em}}{\end{em}\end{shaded*}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+
+
+
+
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+
+
+\hypersetup{
+  pdftitle={NFDI4Microbiota Foundation Guidelines},
+  pdflang={en},
+  pdfkeywords={NFDI, guidelines, policy, open science, open
+data, FAIR, Germany, open access},
+  hidelinks,
+  breaklinks=true,
+  pdfcreator={LaTeX via pandoc with the Eisvogel template}}
+
+\title{NFDI4Microbiota Foundation Guidelines}
+
+\author{}
+\date{version 0.2}
+
+
+
+
+%%
+%% added
+%%
+
+
+%
+% for the background color of the title page
+%
+\usepackage{pagecolor}
+\usepackage{afterpage}
+\usepackage[margin=2.5cm,includehead=true,includefoot=true,centering]{geometry}
+
+%
+% break urls
+%
+\PassOptionsToPackage{hyphens}{url}
+
+%
+% When using babel or polyglossia with biblatex, loading csquotes is recommended
+% to ensure that quoted texts are typeset according to the rules of your main language.
+%
+\usepackage{csquotes}
+
+%
+% captions
+%
+\definecolor{caption-color}{HTML}{777777}
+\usepackage[font={stretch=1.2}, textfont={color=caption-color}, position=top, skip=4mm, labelfont=bf, singlelinecheck=false, justification=raggedright]{caption}
+\setcapindent{0em}
+
+%
+% blockquote
+%
+\definecolor{blockquote-border}{RGB}{221,221,221}
+\definecolor{blockquote-text}{RGB}{119,119,119}
+\usepackage{mdframed}
+\newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=blockquote-border,skipabove=\parskip]{customblockquote}
+\renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
+\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
+
+%
+% Source Sans Pro as the default font family
+% Source Code Pro for monospace text
+%
+% 'default' option sets the default
+% font family to Source Sans Pro, not \sfdefault.
+%
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+    \usepackage[default]{sourcesanspro}
+  \usepackage{sourcecodepro}
+  \else % if not pdftex
+    \usepackage[default]{sourcesanspro}
+  \usepackage{sourcecodepro}
+
+  % XeLaTeX specific adjustments for straight quotes: https://tex.stackexchange.com/a/354887
+  % This issue is already fixed (see https://github.com/silkeh/latex-sourcecodepro/pull/5) but the
+  % fix is still unreleased.
+  % TODO: Remove this workaround when the new version of sourcecodepro is released on CTAN.
+  \ifxetex
+    \makeatletter
+    \defaultfontfeatures[\ttfamily]
+      { Numbers   = \sourcecodepro@figurestyle,
+        Scale     = \SourceCodePro@scale,
+        Extension = .otf }
+    \setmonofont
+      [ UprightFont    = *-\sourcecodepro@regstyle,
+        ItalicFont     = *-\sourcecodepro@regstyle It,
+        BoldFont       = *-\sourcecodepro@boldstyle,
+        BoldItalicFont = *-\sourcecodepro@boldstyle It ]
+      {SourceCodePro}
+    \makeatother
+  \fi
+  \fi
+
+%
+% heading color
+%
+\definecolor{heading-color}{RGB}{40,40,40}
+\addtokomafont{section}{\color{heading-color}}
+% When using the classes report, scrreprt, book,
+% scrbook or memoir, uncomment the following line.
+%\addtokomafont{chapter}{\color{heading-color}}
+
+%
+% variables for title, author and date
+%
+\usepackage{titling}
+\title{NFDI4Microbiota Foundation Guidelines}
+\author{}
+\date{version 0.2}
+
+%
+% tables
+%
+
+%
+% remove paragraph indention
+%
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+%
+%
+% Listings
+%
+%
+
+
+%
+% header and footer
+%
+      \usepackage[headsepline,footsepline]{scrlayer-scrpage}
+
+    \newpairofpagestyles{eisvogel-header-footer}{
+      \clearpairofpagestyles
+      \ihead*{NFDI4Microbiota Foundation Guidelines}
+      \chead*{}
+      \ohead*{version 0.2}
+      \ifoot*{}
+      \cfoot*{}
+      \ofoot*{\thepage}
+      \addtokomafont{pageheadfoot}{\upshape}
+    }
+    \pagestyle{eisvogel-header-footer}
+
+    
+      
+%%
+%% end added
+%%
+
+\begin{document}
+
+%%
+%% begin titlepage
+%%
+      \begin{titlepage}
+          \newgeometry{left=6cm}
+    
+    \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
+    \begin{flushleft}
+    \noindent
+    \\[-1em]
+    \color[HTML]{5F5F5F}
+    \makebox[0pt][l]{\colorRule[FFB12D]{1.3\textwidth}{3pt}}
+    \par
+    \noindent
+
+        {
+      \setstretch{1.4}
+      \vfill
+
+              \noindent
+        \includegraphics{nfdi4microbiota\_Logo\_new.png}
+      
+      \noindent {\huge \textbf{\textsf{NFDI4Microbiota Foundation
+Guidelines}}}
+            \vskip 2em
+      \noindent {\Large \textsf{}}
+      \vfill
+      \textsf{version 0.2}
+    }
+    
+    \end{flushleft}
+    \end{titlepage}
+    \restoregeometry
+    \pagenumbering{arabic} 
+  %%
+%% end titlepage
+%%
+
+% \maketitle
+
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+\newpage
+}
+\hypertarget{motivation}{%
+\section*{Motivation}\label{motivation}}
+\addcontentsline{toc}{section}{Motivation}
+
+NFDI4Microbiota acts as a central infrastructure hub for the national
+microbiology community by providing services for research data
+management, processing and publishing for scientists in the field. It
+relies in turn on already established infrastructure and services
+provided especially by de.NBI and NFDI4Microbiota associated partners
+for hosting and expertise in data processing, quality assessment and
+analysis.
+
+These Guidelines shall act as basis for specific policies of all
+NFDI4Mircobiota projects and services. NFDI partners and other consortia
+are encouraged to use and adapt these guidelines according to their
+specific needs under the CC-BY license for their own purpose.
+NFDI4Microbiota associated partners aim to offer data handling and
+storage, bioinformatic tools and services as well as training within the
+scope of a centralized infrastructure to a broad scientific audience. In
+order to provide a consistent experience, permanent availability and
+long-term support following the
+\href{https://www.go-fair.org/fair-principles/}{FAIR principles} and the
+Open science concepts, offered services and members of NFDI4Microbiota
+are supposed to adhere to the following guidelines, which are monitored
+regularly by TA leads and in Use Case reviews internally.
+
+\begin{quote}
+The following items are meant to be short and concise descriptions of
+community goals within NFDI4Microbiota that are communicated to partners
+and users (on the website). Expanded explanations in italics are meant
+as clarifications to NFDI4Microbiota members in help of fulfilling
+milestones and implementing services (not necessarily shown to end users
+or collapsed by default, to keep the guideline as brief as possible).
+Further details can additionally be found e.g.~in the
+\href{https://nfdi4microbiota.github.io/nfdi4microbiota-knowledge-base/}{NFDI4Microbiota
+Knowledge Base}.
+\end{quote}
+
+\hypertarget{availability}{%
+\section{Availability}\label{availability}}
+
+\hypertarget{providing-software-and-documentation}{%
+\subsection{Providing software and
+documentation}\label{providing-software-and-documentation}}
+
+Applications offered in the context of the NFDI4Microbiota are provided
+free of charge for download in case of offline tools. Online tools are
+provided for any researcher with reasonable quota of usage also free of
+charge. Links to the applications with a short description and
+accompanying documentation are available on
+\url{www.nfdi4microbiota.de}.
+
+\begin{quote}
+We aim to use and encourage the usage of free of charge tools to enable
+access for the broadest possible audience and anyone with a scientific
+interest. Pay-walls and license fees or unnecessary registrations may
+hinder the adoption and hence the re-usability considerably. Similarly,
+registration with a dedicated account may deter potential users. Instead
+services are encouraged to use existing Authentication and Authorization
+Infrastructure (AAI) such as
+\href{https://lifescience-ri.eu/ls-login.html}{LifeScience-RI}. Software
+that is designed to work on a local machine should be designed to work
+also without a network connection, where feasible and online-only tools
+should offer reasonable computation and storage quota for users to
+conduct meaningful analysis (not just example data).
+\end{quote}
+
+\hypertarget{open-source}{%
+\subsection{Open source}\label{open-source}}
+
+Software in this context is developed under an
+\href{https://opensource.org/licenses/}{OSI-approved license} and the
+source code is published in openly accessible code repositories, along
+with appropriate documentation under an open license.
+
+\begin{quote}
+From experience, tools developed in academia sometimes lack in the
+necessary documentation, are no longer maintained shortly after
+publication or not available at all after personnel left or institute's
+website links changed. In these cases, potentially useful tools become
+useless at best or even a frustrating waste of time for following
+generations of researchers. Openly hosted source code under a permissive
+license enables others to troubleshoot, adapt or even take over the
+development of a tool even in these cases. We recommend including the
+relatively concise \href{https://opensource.org/license/mit/}{MIT
+license}. Publishing the actual source of a tool on a public code
+repository is necessary to prevent black-box results and preserve
+resources persistently. We recommend code hosting on \url{github.com},
+\url{gitlab.org}, {[}gitlab.eudat.eu{]}, {[}codeberg.org{]} or similar
+services for software projects. NFDI4Microbiota specific projects are
+hosted under the
+\href{github.com/NFDI4Microbiota}{github.com/NFDI4Microbiota team
+account}. Author should ideally also make use of the code deposition
+feature of \href{zenodo.org}{Zenodo} and make sure that the git
+repository is archived by \href{softwareheritage.org}{Software
+Heritage}. We also encourage to apply good research software development
+practices (including automated testing, semantic versioning,
+machine-readable software management plans, allocation of DOI to
+version, usage of Citation File Format (CFF) etc.).
+\end{quote}
+
+\hypertarget{hosting}{%
+\subsection{Hosting}\label{hosting}}
+
+Online provided services are supposed to be accessible with minimal
+downtime. To assure the permanent availability, hosting containerized
+services in the de.NBI cloud infrastructure and re-using established
+high-availability services within the scientific community is
+encouraged.
+
+\begin{quote}
+Even though we recognize that hosting web-tools on cloud services
+requires additional effort, we highly encourage this step instead of or
+additionally to hosting on local institute's machines to guarantee
+scalability for high demand of compute and storage resources and provide
+high availability. If done correctly, containerizing applications can
+prevent a lot of future work and headaches. Further
+\href{https://www.denbi.de/images/Service/deNBI_ELIXIR-DE_Gudielines_Services_version_20200729.pdf}{de.NBI
+specific guidelines} for hosted services apply.
+\end{quote}
+
+\hypertarget{open-access-publishing}{%
+\subsection{Open access publishing}\label{open-access-publishing}}
+
+All types of scientific publications created in the context of
+NFDI4Microbiota are meant to be published in Open Access journals. In
+addition, we urge our users to use preprint servers like
+\href{https://www.biorxiv.org/}{bioRxiv} to make their findings openly
+accessible prior to publication. Researchers using the services of
+NFDI4Microbiota are highly encouraged to publish in Open Access journals
+as well.
+
+\begin{quote}
+Research findings funded by public money should be made freely available
+in Open Access journals to maximize the potential audience and promote
+Open Science goals. Especially DFG funded projects have the obligation
+to publish their result under open licenses in Open Access and must
+contain a reference to the respective project number. In the case of
+publications enabled by NFDI4Microbiota this is ``Deutsche
+Forschungsgemeinschaft (DFG) - Project number 460129525''.
+\end{quote}
+
+\hypertarget{open-data}{%
+\subsection{Open data}\label{open-data}}
+
+Data handled/produced in the context of NFDI4Microbiota must be made
+FAIR and openly available at the earliest possible time under a
+permissive license unless legal etc. restrictions prohibit a publication
+in commonly used repositories. This includes the raw data of the
+experiments and also the accompanying metadata in a commonly used
+metadata standard.
+
+\begin{quote}
+Services that receive data should encourage the user to publish their
+data openly right away (e.g.~by default) either within the service or
+recommended repositories. As a guide to sharing microbiome related data
+and analysis results please refer to
+\href{https://doi.org/10.1038/s41564-023-01484-x}{Huttenhower et
+al.~2023}. Where data is not made publicly available, data sharing with
+other users should be enabled with fine grained control over read/write
+and re-sharing permissions. Finally, all data and its accompanying
+metadata (following the
+\href{https://github.com/NFDI4Microbiota/MetadataStandards}{minimal
+standards}) needs to be deposited in the respective repositories latest
+upon publication of the research. An appropriate and compatible license
+(\href{https://creativecommons.org/choose/\#}{Creative Commons}
+\href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0} or
+\href{https://creativecommons.org/licenses/by/4.0/}{CC-BY} is
+recommended) needs to be supported by the service and chosen by the
+user. The data set should be properly referenced in the publications
+using the respective identifiers.
+\end{quote}
+
+\hypertarget{support}{%
+\section{Support}\label{support}}
+
+\hypertarget{support-contact}{%
+\subsection{Support contact}\label{support-contact}}
+
+Each service requires a contact (e-mail address) deposited with
+NFDI4Microbiota for support questions via the
+\href{https://nfdi4microbiota.de/contact-form/}{help desk} (e.g.~e-mail
+support, online issue tracking).
+
+\begin{quote}
+Primarily, developers of a service are responsible for the maintenance,
+availability, documentation and supporting users with problems and
+handling feature requests. Since we aim to interlock the different
+services offered within NFDI4Mictobiota (e.g.~in common workflows), we
+want to also offer central support to users who use NFDI4Microbiota as a
+platform. In order to address requests directly from the help desk or
+delegate issues to the respective maintainers, a contact address and
+link to the documentation is needed for each service.
+\end{quote}
+
+\hypertarget{documentation-in-the-knowledge-base}{%
+\subsection{Documentation in the Knowledge
+Base}\label{documentation-in-the-knowledge-base}}
+
+Services maintain a short description with documentation on a sub-page
+in the NFDI4Microbiota Knowledge Base published under a permissive
+license.
+
+\begin{quote}
+As part of the effort to make a service available via the
+NFDI4Microbiota platform for better visibility, a short description
+(optimally with a screen shot) along with links to the service itself,
+documentation and code repository. This sub-page will also be used to
+summarize frequently asked support questions and answers by the
+maintainers and the help desk.
+\end{quote}
+
+\hypertarget{interoperability}{%
+\section{Interoperability}\label{interoperability}}
+
+\hypertarget{compatible-community-standards}{%
+\subsection{Compatible community
+standards}\label{compatible-community-standards}}
+
+Software and services support widely used bioinformatics standard
+formats for input and output in order to make them compatible with other
+tools. Metadata formats adhere to widely used minimal standards and are
+required for any user uploaded data. Services and tools provided by
+NFDI4Microbiota which deal with metadata and relevant file formats
+support at least one of these standards as a default or recommendation
+for users.
+
+\begin{quote}
+While a myriad of file formats is generally available and it is easy to
+generate purpose-build output for your own applications, many are hard
+to comprehend and parse, not or barely specified and generally a
+hindrance to re-usability and interoperability. Additionally, neither
+metadata, nor provenance information is stored along the primary data
+more often than not. Therefore, services are supposed to adhere to
+widely-used and specified file formats for input and output. Summary
+statistics and logs with complete parameters are highly encouraged to
+enable provenance tracking. Web services which let users upload data
+should request metadata in a format compatible with at least one
+well-specified metadata standard by default.
+\end{quote}
+
+\hypertarget{persistent-identifiers}{%
+\subsection{Persistent Identifiers}\label{persistent-identifiers}}
+
+Whenever possible, persistent identifiers are used within the services
+own databases and when referring/linking to external sources also in
+output of offline tools. The interoperability between offered services
+that are relevant for each other is highly encouraged whenever possible.
+
+\begin{quote}
+Databases have to make use of existing (persistent) identifiers when
+importing external resources (e.g.~other databases). External
+identifiers should link back to the respective resource via permalinks
+or API. Additionally, databases may provide their own persistent
+identifiers, especially when cataloging novel entries. These identifiers
+should be exposed as permalinks or in an API.
+\end{quote}
+
+\hypertarget{re-usability}{%
+\section{(Re-)Usability}\label{re-usability}}
+
+\hypertarget{terms-of-use}{%
+\subsection{Terms of use}\label{terms-of-use}}
+
+Services publicly state the terms of their use.
+
+\begin{quote}
+Web services present their terms of use for visitors as part of their
+website to inform users about the conditions and restrictions of the
+service, specifying the following information: Who is offering the
+service under which license or jurisdiction and with which (limited)
+guarantees to which audience (in case of restricted access).
+Additionally, services that handle user data (login information or
+uploaded material) need to display a privacy policy (ger.:
+Datenschutzerklärung) at registration/upload specifying which data is
+stored where, the responsible data privacy office and terms for data
+retention, sharing and deletion in compliance with the law. Services may
+make use of generic Terms of Service and Privacy Policy offered by
+NFDI4Microbiota internally and customize them to their needs under legal
+advisement.
+\end{quote}
+
+\hypertarget{accessibility}{%
+\subsection{Accessibility}\label{accessibility}}
+
+Services strive to be accessible by providing APIs (application
+programming interface) or supporting machine-readable formats and
+support barrier-free accessibility.
+
+\begin{quote}
+In order to maximize the usability of a given service, developers must
+think of different ways, user may interact with their interface,
+sometimes differently than intended. Instead of using a service just as
+a front-end to a database, developers should consider exposing an API or
+exporting machine-readable data dumps or releases that other developers
+can interact or make use of. Additionally, user interfaces should be
+designed with specific user constrains in mind, by offering alt-text for
+images (to be compatible with screen readers) and avoiding color-only
+encoding of information to accommodate red-green deficiency or
+color-blindness. Making a user interface rather static than dynamic
+(avoid hover-over menus) and navigable by using a logical tab order
+improves the usability of all potential users.
+\end{quote}
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
+
+Links to other consortia's policies and guidelines:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{dataPLANT:}
+  https://nfdi4plants.org/content/news/2021-11-08-dataplant-tools-and-services-development-principles.html
+\item
+  \textbf{nfdi4health:}
+  https://repository.publisso.de/resource/frl:6431645/data
+\item
+  \textbf{NFDI4BIOIMAGE:} https://nfdi4bioimage.de/en/aims/
+\item
+  \textbf{NMDC:} https://microbiomedata.org/data-management/
+\item
+  \textbf{GHGA:} https://zenodo.org/record/6828131
+\end{itemize}
+
+\end{document}

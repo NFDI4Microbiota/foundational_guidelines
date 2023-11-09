@@ -1,12 +1,11 @@
 ---
-title: "NFDI4Microbiota\nFoundation Guidelines"
+title: "Foundation Guidelines"
+titlegraphic: "nfdi4microbiota_Logo_new.png"
 numbersections: true
 numbered-sections: true
 date: version 0.2
 lang: en
 keywords: [NFDI, guidelines, policy, open science, open data, FAIR, Germany, open access]
-<!-- book: true -->
-classoption: [oneside]
 toc: true
 toc-own-page: true
 titlepage: true
